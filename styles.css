@@ -1,26 +1,49 @@
-body {
+/* Reset default margins and ensure full height */
+* {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: hsl(0, 0%, 95%);
-    padding: 10px; /* Prevents overflow on small screens */
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body Setup */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content */
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+}
+
+/* Main container to keep elements structured */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes footer to the bottom */
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    min-height: 90vh; /* Takes most of the viewport */
+    padding: 10px;
+}
+
+/* Calculator Styling */
 #calculator {
     font-family: Arial, sans-serif;
     background-color: hsl(0, 0%, 15%);
     border-radius: 15px;
     width: 100%;
-    max-width: 400px; /* Reducing max width for better mobile fit */
+    max-width: 400px;
     overflow: hidden;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Display */
 #display {
     background-color: hsl(0, 0%, 20%);
-    font-size: 4rem; /* Adjusting for better scaling */
+    font-size: 4rem;
     color: white;
     width: 100%;
     padding: 15px;
@@ -29,7 +52,7 @@ body {
     border-radius: 10px;
 }
 
-/* Grid Layout for Keys */
+/* Button Grid */
 #keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -37,13 +60,13 @@ body {
     padding: 20px;
 }
 
-/* Button Styling */
+/* Buttons */
 button {
     background-color: hsl(0, 0%, 30%);
     color: white;
-    height: 80px; /* Reduce size for smaller screens */
+    height: 80px;
     width: 80px;
-    font-size: 2rem; /* Reduce font size for better fit */
+    font-size: 2rem;
     border: none;
     font-weight: bold;
     border-radius: 50px;
@@ -51,7 +74,7 @@ button {
     transition: background 0.2s ease;
 }
 
-/* Reduce button size on smaller screens */
+/* Adjust button size for smaller screens */
 @media (max-width: 500px) {
     button {
         height: 60px;
@@ -79,9 +102,9 @@ button:active {
     background-color: hsl(0, 0%, 50%);
 }
 
-/* Operator Button Colors */
+/* Operator Buttons */
 .operator-btn {
-    background-color: orange;
+    background-color: #ffa500;
 }
 
 .operator-btn:hover {
@@ -92,10 +115,11 @@ button:active {
     background-color: hsl(35, 100%, 75%);
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
     text-align: center;
     color: hsl(0, 0%, 50%);
     font-size: 1.2rem;
     padding: 15px;
+    width: 100%;
 }
